@@ -1,0 +1,95 @@
+@mixin flexbox($justify, $align) {
+    display:flex;
+    justify-content:$justify;
+    align-items:$align;
+}
+
+// for desktop
+
+@media screen and (min-width:1025px) {
+    header {
+        width:100%;
+        height:10%;
+        @include flexbox(flex-start, center);
+
+        .menu-button {
+            display:none;
+        }
+    
+        .logo {
+            margin-left:100px;
+            text-decoration:none;
+            color:$text;
+            font-weight:bold;
+            font-family:'Sansita Swashed', cursive;
+        }
+    
+        .menu {
+            width:50%;
+            margin-left:auto;
+            @include flexbox(space-evenly, center);
+
+            &:hover li a {
+                opacity:.2;
+                filter:blur(1px);
+            }
+    
+            li {
+                list-style-type: none;
+    
+                a {
+                    text-decoration: none;
+                    color:white;
+                    font-weight:bold;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        font-size: 1.2rem;
+                        opacity:1;
+                        filter:blur(0);
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+//for smartphones
+
+@media screen and (max-width:1024px) {
+    header {
+        width:100%;
+        height:10%;
+        @include flexbox(flex-start, center);
+    
+        .logo {
+            margin-left:30px;
+            text-decoration:none;
+            color:$text;
+            font-weight:bold;
+            font-family:'Sansita Swashed', cursive;
+        }
+
+        .menu-button {
+            position:absolute;
+            right:10%;
+            
+            div {
+                width:20px;
+                height:2px;
+                background-color:$text;
+                margin-bottom:4px;
+            }
+
+            div:nth-child(2) {
+                width:16px;
+            }
+
+            div:nth-child(3) {
+                width:12px;
+            }
+        }
+    
+    }
+}
