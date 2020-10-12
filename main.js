@@ -23,8 +23,8 @@ let pic = document.querySelector(".pic"),
 
       nextBtn.addEventListener("click", () => {
         if (position === images.length-1) {
-          tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:360, y:20, ease:Power2.easeInOut});
           position = 0;
+          tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:360, y:20, ease:Power2.easeInOut});
           return pic.src = images[position];
         }
 
@@ -36,8 +36,8 @@ let pic = document.querySelector(".pic"),
 
       prevBtn.addEventListener("click", () => {
         if (position === 0) {
-          tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:-360, y:20, ease:Power2.easeInOut});
           position = images.length-1;
+          tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:-360, y:20, ease:Power2.easeInOut});
           return pic.src = images[position];
         }
         tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:-360, y:20, ease:Power2.easeInOut});
