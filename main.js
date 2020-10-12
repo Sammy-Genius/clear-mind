@@ -28,9 +28,9 @@ let pic = document.querySelector(".pic"),
           return pic.src = images[position];
         }
 
+        tl.from(".pic", {duration:1, opacity:0, scale:.3, rotate:360, y:20, ease:Power2.easeInOut});
         pic.src = images[position + 1];
         position++;
-        tl.from(".pic", {duration:1, opacity:0, scale:.3, rotate:360, y:20, ease:Power2.easeInOut});
         
       });
 
@@ -41,7 +41,7 @@ let pic = document.querySelector(".pic"),
           return pic.src = images[position];
         }
 
+        tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:-360, y:20, ease:Power2.easeInOut});
         pic.src = images[position - 1];
         position--;
-        tl.from(".pic", {duration:1, opacity:0, scale:.1, rotate:-360, y:20, ease:Power2.easeInOut});
       });
